@@ -62,6 +62,7 @@ import {
   isJiraDashboardAvailable,
 } from '@axis-backstage/plugin-jira-dashboard';
 import { ReadmeCard } from '@axis-backstage/plugin-readme';
+import { isStatuspageAvailable, StatuspageEntityComponent } from '@axis-backstage/plugin-statuspage';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -132,7 +133,13 @@ const overviewContent = (
     <Grid item md={6}>
       <EntityAboutCard variant="gridItem" />
     </Grid>
-
+    <EntitySwitch>
+      <EntitySwitch.Case if={isStatuspageAvailable}>
+        <Grid item xs={12}>
+          <StatuspageEntityComponent />
+        </Grid>
+      </EntitySwitch.Case>
+    </EntitySwitch>
     <Grid item md={6} xs={12}>
       <EntityCatalogGraphCard variant="gridItem" height={400} />
     </Grid>

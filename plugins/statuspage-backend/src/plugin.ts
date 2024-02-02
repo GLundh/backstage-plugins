@@ -11,19 +11,21 @@ import { createRouter } from './service/router';
  * @public
  */
 export const statuspagePlugin = createBackendPlugin({
-  pluginId: 'status-page',
+  pluginId: 'statuspage',
   register(env) {
     env.registerInit({
       deps: {
         config: coreServices.rootConfig,
         logger: coreServices.logger,
         httpRouter: coreServices.httpRouter,
+        discovery: coreServices.discovery,
       },
-      async init({ config, logger, httpRouter }) {
+      async init({ config, logger, httpRouter, discovery }) {
         httpRouter.use(
           await createRouter({
             config,
             logger: loggerToWinstonLogger(logger),
+            discovery,
           }),
         );
       },

@@ -10,3 +10,5 @@ export {
 } from './plugin';
 export { StatuspageComponent, StatuspageEntityComponent } from './components';
 export type { StatuspageProps } from './components';
+export type { StatuspageApi } from './api';
+export { statuspageApiRef } from './api';

@@ -4,6 +4,8 @@ import Router from 'express-promise-router';
 import { Logger } from 'winston';
 import { fetchComponentGroups, fetchComponents, getLink } from './api';
 import { Config } from '@backstage/config';
+import { DiscoveryApi } from '@backstage/plugin-permission-common';
+
 
 /**
  * Router options.
@@ -15,6 +17,8 @@ export interface RouterOptions {
   logger: Logger;
   /** Backstage config object */
   config: Config;
+  /** Backstage discovery api instance */
+  discovery: DiscoveryApi;
 }
 
 const COMPONENT_GROUPS_KEY = 'component-groups';
@@ -29,7 +33,7 @@ export async function createRouter(
   options: RouterOptions,
 ): Promise<express.Router> {
   const { logger, config } = options;
-  logger.debug('Setting up router for statuspage-backend');
+  logger.info('Setting up router for statuspage-backend');
 
   const pluginCache = CacheManager.fromConfig(config).forPlugin('statuspage');
   const cache = pluginCache.getClient({ defaultTtl: 1000 * 60 * 5 });

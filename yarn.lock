@@ -1120,7 +1120,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@axis-backstage/plugin-statuspage-backend@workspace:plugins/statuspage-backend":
+"@axis-backstage/plugin-statuspage-backend@workspace:^, @axis-backstage/plugin-statuspage-backend@workspace:plugins/statuspage-backend":
   version: 0.0.0-use.local
   resolution: "@axis-backstage/plugin-statuspage-backend@workspace:plugins/statuspage-backend"
   dependencies:
@@ -1145,7 +1145,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@axis-backstage/plugin-statuspage@workspace:plugins/statuspage":
+"@axis-backstage/plugin-statuspage@workspace:^, @axis-backstage/plugin-statuspage@workspace:plugins/statuspage":
   version: 0.0.0-use.local
   resolution: "@axis-backstage/plugin-statuspage@workspace:plugins/statuspage"
   dependencies:
@@ -1161,7 +1161,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^5.10.1"
     react-use: "npm:^17.2.4"
   peerDependencies:
-    react: ^16.13.1 || ^17.0.0
+    react: ^17.0.0  || ^18.0.0
   languageName: unknown
   linkType: soft
 
@@ -13976,6 +13976,7 @@ __metadata:
     "@axis-backstage/plugin-jira-dashboard": "workspace:^"
     "@axis-backstage/plugin-jira-dashboard-common": "workspace:^"
     "@axis-backstage/plugin-readme": "workspace:^"
+    "@axis-backstage/plugin-statuspage": "workspace:^"
     "@backstage/app-defaults": "npm:^1.4.7"
     "@backstage/catalog-model": "npm:^1.4.3"
     "@backstage/cli": "npm:^0.25.1"
@@ -14670,6 +14671,7 @@ __metadata:
   dependencies:
     "@axis-backstage/plugin-jira-dashboard-backend": "workspace:^"
     "@axis-backstage/plugin-readme-backend": "workspace:^"
+    "@axis-backstage/plugin-statuspage-backend": "workspace:^"
     "@backstage/backend-common": "npm:^0.20.1"
     "@backstage/backend-defaults": "npm:^0.2.9"
     "@backstage/backend-plugin-api": "npm:^0.6.9"
